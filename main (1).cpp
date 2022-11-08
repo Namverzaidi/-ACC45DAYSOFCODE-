@@ -1,24 +1,19 @@
+//write a program in C++ to check whether a year is a leap year or not. 
 
-#include <iostream>
+
+#include<iostream>
 using namespace std;
-
-class Employee {
-  private:
-    
-    int salary;
-
-  public:
-    void setSalary(int s) {
-      salary = s;
-    }
-    int getSalary() {
-      return salary;
-    }
-};
-
-int main() {
-  Employee myObj;
-  myObj.setSalary(50000);
-  cout << myObj.getSalary();
-  return 0;
+int main()
+{
+    int yr;
+    cout<<"Enter the Year: ";
+    cin>>yr;
+    if((yr%4==0) && (yr%100!=0))
+        cout<<"\nIt is a Leap Year";
+    else if(yr%400==0)
+        cout<<"\nIt is a Leap Year";
+    else
+        cout<<"\nIt is not a Leap Year";
+    cout<<endl;
+    return 0;
 }
