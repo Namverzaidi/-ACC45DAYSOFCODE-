@@ -1,4 +1,17 @@
-//  Program to print half pyramid using *
+
+
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+
+
+
+
+
+
+
 
 
 
@@ -7,20 +20,24 @@ using namespace std;
 
 int main()
 {
-    int rows;
+    int space, rows;
 
-    cout << "Enter number of rows: ";
+    cout <<"Enter number of rows: ";
     cin >> rows;
 
-    for(int i = 1; i <= rows; ++i)
+    for(int i = 1, k = 0; i <= rows; ++i, k = 0)
     {
-        for(int j = 1; j <= i; ++j)
+        for(space = 1; space <= rows-i; ++space)
+        {
+            cout <<"  ";
+        }
+
+        while(k != 2*i-1)
         {
             cout << "* ";
+            ++k;
         }
-        cout << "\n";
-    }
+        cout << endl;
+    }    
     return 0;
 }
-Example 2: Program to print half pyramid a using numbers
-1
