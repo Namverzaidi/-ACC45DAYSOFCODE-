@@ -1,24 +1,29 @@
-// Program of function overloading with different types of arguments.
+// Program to compute absolute value
+// Works for both int and float
 
-#include<iostream>  
-using namespace std;  
-int mul(int,int);  
-float mul(float,int);  
-  
-  
-int mul(int a,int b)  
-{  
-    return a*b;  
-}  
-float mul(double x, int y)  
-{  
-    return x*y;  
-}  
-int main()  
-{  
-    int r1 = mul(6,7);  
-    float r2 = mul(0.2,3);   
-    std::cout << "r1 is : " <<r1<< std::endl;  
-    std::cout <<"r2 is : "  <<r2<< std::endl;  
-    return 0;  
-}  
+#include <iostream>
+using namespace std;
+
+// function with float type parameter
+float absolute(float var){
+    if (var < 0.0)
+        var = -var;
+    return var;
+}
+
+// function with int type parameter
+int absolute(int var) {
+     if (var < 0)
+         var = -var;
+    return var;
+}
+
+int main() {
+    
+    // call function with int type parameter
+    cout << "Absolute value of -5 = " << absolute(-5) << endl;
+
+    // call function with float type parameter
+    cout << "Absolute value of 5.5 = " << absolute(5.5f) << endl;
+    return 0;
+}
