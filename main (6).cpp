@@ -1,27 +1,36 @@
- //write a program in C++ to receive decimal number and print its equivalent value in hexadecimal.
+// Program to Sort Elements in Lexicographical Order (Dictionary Order)
 
-#include<iostream>
+
+
+#include <iostream>
 using namespace std;
+
 int main()
 {
-    int decimalNum, rem, i=0;
-    char hexaDecimalNum[50];
-    cout<<"Enter the Decimal Number: ";
-    cin>>decimalNum;
-    while(decimalNum!=0)
+    string str[10], temp;
+
+    cout << "Enter 10 words: " << endl;
+    for(int i = 0; i < 10; ++i)
     {
-        rem = decimalNum%16;
-        if(rem<10)
-            rem = rem+48;
-        else
-            rem = rem+55;
-        hexaDecimalNum[i] = rem;
-        i++;
-        decimalNum = decimalNum/16;
+      getline(cin, str[i]);
     }
-    cout<<"\nEquivalent Hexadecimal Value: ";
-    for(i=i-1; i>=0; i--)
-        cout<<hexaDecimalNum[i];
-    cout<<endl;
+
+    // Use Bubble Sort to arrange words
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < 9 - i; ++j) {
+            if (str[j] > str[j + 1]) {
+                temp = str[j];
+                str[j] = str[j + 1];
+                str[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "In lexicographical order: " << endl;
+
+    for(int i = 0; i < 10; ++i)
+    {
+       cout << str[i] << endl;
+    }
     return 0;
 }
