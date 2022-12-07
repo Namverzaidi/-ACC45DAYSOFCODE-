@@ -1,21 +1,32 @@
- //write a program in C++ that converts octal number to decimal number. 
+// Program to assign data to members of a structure variable and display it.
 
-#include<iostream>
-#include<math.h>
+
+
+#include <iostream>
 using namespace std;
+
+struct Person
+{
+    char name[50];
+    int age;
+    float salary;
+};
+
 int main()
 {
-    int octalNum, decimalNum=0, i=0, rem;
-    cout<<"Enter the Octal Number: ";
-    cin>>octalNum;
-    while(octalNum!=0)
-    {
-        rem = octalNum%10;
-        decimalNum = decimalNum + (rem*pow(8,i));
-        i++;
-        octalNum = octalNum/10;
-    }
-    cout<<"\nEquivalent Decimal Value: "<<decimalNum;
-    cout<<endl;
+    Person p1;
+    
+    cout << "Enter Full name: ";
+    cin.get(p1.name, 50);
+    cout << "Enter age: ";
+    cin >> p1.age;
+    cout << "Enter salary: ";
+    cin >> p1.salary;
+
+    cout << "\nDisplaying Information." << endl;
+    cout << "Name: " << p1.name << endl;
+    cout <<"Age: " << p1.age << endl;
+    cout << "Salary: " << p1.salary;
+
     return 0;
 }
