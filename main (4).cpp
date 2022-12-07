@@ -1,43 +1,40 @@
 
 
-        *
-      * * *
-    * * * * *
-  * * * * * * *
-* * * * * * * * *
-
-
-
-
-
-
-
-
+// Overloading Using Different Number of Parameters
 
 
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int space, rows;
+// function with 2 parameters
+void display(int var1, double var2) {
+    cout << "Integer number: " << var1;
+    cout << " and double number: " << var2 << endl;
+}
 
-    cout <<"Enter number of rows: ";
-    cin >> rows;
+// function with double type single parameter
+void display(double var) {
+    cout << "Double number: " << var << endl;
+}
 
-    for(int i = 1, k = 0; i <= rows; ++i, k = 0)
-    {
-        for(space = 1; space <= rows-i; ++space)
-        {
-            cout <<"  ";
-        }
+// function with int type single parameter
+void display(int var) {
+    cout << "Integer number: " << var << endl;
+}
 
-        while(k != 2*i-1)
-        {
-            cout << "* ";
-            ++k;
-        }
-        cout << endl;
-    }    
+int main() {
+
+    int a = 5;
+    double b = 5.5;
+
+    // call function with int type parameter
+    display(a);
+
+    // call function with double type parameter
+    display(b);
+
+    // call function with 2 parameters
+    display(a, b);
+
     return 0;
 }
